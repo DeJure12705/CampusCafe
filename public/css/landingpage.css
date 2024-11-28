@@ -1,0 +1,18 @@
+/* Full Background Image */
+body {
+    background-image: url('https://your-image-url.com');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Blurry Background for Login and Register */
+.bg-blurry {
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
+}
+
+.dark .bg-blurry {
+    background-color: rgba(0, 0, 0, 0.6); /* Dark background for dark mode */
+}

@@ -1,0 +1,36 @@
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d3436; /* Darker background for a modern look */
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Left side of header */
+.header-left {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    position: fixed;
+}
+
+/* Nav links styling */
+.navbar-nav .nav-link {
+    color: #dfe6e9 !important; /* Light gray for better readability */
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff; /* White text on hover for better contrast */
+    background-color: #636e72; /* Light gray background on hover */
+}

@@ -1,0 +1,56 @@
+/* Ensure the body and html take up full screen and have no margin */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+/* Make sure the container takes the full height of the screen and uses flex */
+.relative {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100vh;
+}
+
+/* Center the login and register buttons */
+nav {
+    display: flex;
+    gap: 16px; /* Space between buttons */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the footer to always stay at the bottom */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Styling the buttons */
+button, a {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: #FF2D20;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for the buttons */
+button:hover, a:hover {
+    background-color: #ff5733;
+}
+
+/* For mobile view, make buttons stack vertically */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 8px; /* Adjust spacing for smaller screens */
+    }
+}

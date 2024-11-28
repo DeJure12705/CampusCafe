@@ -1,0 +1,83 @@
+/* General Page Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Product Card */
+.product-card {
+    border: none;
+    border-radius: 10px; /* Rounded corners for softer look */
+    background-color: #ffffff; /* White background */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 15px;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.product-card img {
+    border-radius: 10px;
+    max-height: 220px;
+    object-fit: cover;
+}
+
+.product-card h5 {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #333; /* Dark gray for text */
+    font-family: 'Arial', sans-serif;
+}
+
+.product-card p {
+    color: #888; /* Lighter gray for text */
+    font-size: 14px;
+}
+
+.product-card .btn {
+    background-color: #7f4a4a; /* Rich coffee brown */
+    color: #fff;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.product-card .btn:hover {
+    background-color: #5a3434; /* Darker brown on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #3e2a47; /* Deep mauve background */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Grid Layout for products */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Spacing for mobile view */
+@media screen and (max-width: 768px) {
+    .product-card h5 {
+        font-size: 16px;
+    }
+
+    .product-card p {
+        font-size: 12px;
+    }
+}

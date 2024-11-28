@@ -1,0 +1,35 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container-lg {
+    min-height: calc(100vh - 100px); /* Adjust for footer height */
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+
+/* Footer styles */
+footer {
+    background-color: #333; /* Dark background for footer */
+    color: white;            /* White text color */
+    text-align: center;      /* Centered text */
+    padding: 20px 0;         /* Padding around the footer */
+    position: relative;      /* Keeps footer in normal flow */
+    bottom: 0;               /* Stick it to the bottom of the page if needed */
+    width: 100%;             /* Full width of the page */
+    margin-top: auto;        /* Push the footer down in case of less content */
+}
+
+/* For responsiveness and mobile view */
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;           /* Centers the content */
+    padding: 0 15px;          /* Padding around the container */
+}
+
