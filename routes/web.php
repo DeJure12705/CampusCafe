@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Middleware\AuthAdmin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -11,7 +13,6 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('home');
-
 });
 Route::get('/Contact-page', function () {
     return view('contact');
@@ -33,11 +34,14 @@ Route::get('/admin', function () {
     return view('admin');
 })->name('admin');
 
-
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/');
+})->name('logout');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::resource('orders', OrderController::class);
 
@@ -50,5 +54,11 @@ Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('pr
 Route::put('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/user/dashboard', [App\Http\Controllers\UserController::class, 'index'])->name('user.dashboard');
+});
 
-
+Route::middleware(['auth', AuthAdmin::class])->group(function () {
+    Route::get('/admin/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin', [App\Http\Controllers\AdminController::class, 'admin'])->name('admin.admin');
+});
